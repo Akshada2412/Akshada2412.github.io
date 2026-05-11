@@ -9,20 +9,11 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#08090d;
-  --bg2:#0e1117;
-  --bg3:#13161f;
-  --ink:#EEEAE0;
-  --ink2:rgba(238,234,224,0.5);
-  --ink3:rgba(238,234,224,0.25);
-  --gold:#C9A84C;
-  --gold2:#E8C97A;
-  --blue:#4A7FD4;
-  --border:rgba(201,168,76,0.12);
-  --border2:rgba(238,234,224,0.07);
-  --syne:'Syne',sans-serif;
-  --serif:'Instrument Serif',Georgia,serif;
-  --mono:'DM Mono',monospace;
+  --bg:#08090d;--bg2:#0e1117;--bg3:#13161f;
+  --ink:#EEEAE0;--ink2:rgba(238,234,224,0.5);--ink3:rgba(238,234,224,0.25);
+  --gold:#C9A84C;--gold2:#E8C97A;--blue:#4A7FD4;
+  --border:rgba(201,168,76,0.12);--border2:rgba(238,234,224,0.07);
+  --syne:'Syne',sans-serif;--serif:'Instrument Serif',Georgia,serif;--mono:'DM Mono',monospace;
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--syne);overflow-x:hidden;cursor:none}
@@ -40,8 +31,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
 .status-roles{display:flex;gap:0.5rem;flex-wrap:wrap}
 .status-role{font-family:var(--mono);font-size:0.65rem;color:var(--ink2);background:rgba(238,234,224,0.05);border:1px solid var(--border2);padding:0.2rem 0.7rem;border-radius:2px;letter-spacing:0.06em}
-
-/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 420px;position:relative;z-index:1}
 .hero-left{padding:9rem 3rem 5rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border2)}
 .hero-right{padding:9rem 3rem 5rem;display:flex;flex-direction:column;justify-content:center;background:var(--bg2)}
@@ -66,16 +55,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:
 .hero-quote p{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink2);line-height:1.7}
 .hero-quote cite{display:block;margin-top:0.75rem;font-family:var(--mono);font-size:0.65rem;color:var(--gold);letter-spacing:0.1em;font-style:normal}
 @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-
-/* SECTIONS */
 .section{padding:7rem 3rem;position:relative;z-index:1}
 .section-alt{background:var(--bg2)}
 .section-header{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:4rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border2)}
 .section-num{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spacing:0.15em}
 .section-ttl{font-family:var(--serif);font-style:italic;font-size:clamp(2rem,3.5vw,3.2rem);color:var(--ink);line-height:1.1}
 .section-ttl strong{font-style:normal;color:var(--gold)}
-
-/* ABOUT */
 .about-layout{display:grid;grid-template-columns:1fr 380px;gap:6rem;align-items:start}
 .about-body p{font-size:1rem;color:var(--ink2);line-height:1.85;margin-bottom:1.5rem;font-weight:400}
 .about-body p strong{color:var(--ink);font-weight:600}
@@ -85,8 +70,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:
 .tl-year{font-family:var(--mono);font-size:0.68rem;color:var(--gold);letter-spacing:0.08em;padding-top:0.15rem}
 .tl-text{font-size:0.85rem;color:var(--ink2);line-height:1.6}
 .tl-text strong{color:var(--ink);display:block;margin-bottom:0.2rem}
-
-/* EXPERIENCE */
 .exp-total-badge{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.68rem;color:var(--gold);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);padding:0.35rem 1rem;border-radius:2px;letter-spacing:0.1em;margin-bottom:3rem}
 .exp-list{display:flex;flex-direction:column}
 .exp-item{display:grid;grid-template-columns:220px 1fr;gap:3rem;padding:3rem 0;border-bottom:1px solid var(--border2)}
@@ -99,8 +82,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:
 .exp-pts li{font-size:0.87rem;color:var(--ink2);line-height:1.7;padding-left:1.25rem;position:relative}
 .exp-pts li::before{content:'';position:absolute;left:0;top:0.65rem;width:5px;height:1px;background:var(--gold)}
 .exp-pts li strong{color:var(--ink)}
-
-/* PROJECTS */
 .projects-layout{display:flex;flex-direction:column;gap:2px}
 .proj-card{display:grid;grid-template-columns:1fr 340px;background:var(--bg2);border:1px solid var(--border2);border-radius:4px;overflow:hidden;transition:all 0.3s}
 .proj-card:hover{border-color:rgba(201,168,76,0.3);transform:translateX(4px)}
@@ -131,8 +112,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:
 .proj-sm-title{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink);margin-bottom:0.75rem;line-height:1.25}
 .proj-sm-desc{font-size:0.8rem;color:var(--ink2);line-height:1.65}
 .proj-sm-result{margin-top:1.25rem;font-family:var(--mono);font-size:0.68rem;color:var(--gold);letter-spacing:0.05em}
-
-/* SKILLS */
 .skills-layout{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border2)}
 .skill-block{background:var(--bg);padding:3rem}
 .sk-label{font-family:var(--mono);font-size:0.62rem;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border2)}
@@ -141,8 +120,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:
 .sk-item:hover{background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.25);color:var(--gold)}
 .certs-row{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:3rem}
 .cert{font-family:var(--mono);font-size:0.65rem;color:var(--ink2);background:rgba(74,127,212,0.06);border:1px solid rgba(74,127,212,0.15);padding:0.35rem 0.9rem;border-radius:2px;letter-spacing:0.06em}
-
-/* CONTACT */
 .contact-layout{display:grid;grid-template-columns:1fr 480px;gap:6rem;align-items:start}
 .contact-headline{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.8rem);color:var(--ink);line-height:1.1;margin-bottom:2rem}
 .contact-headline em{font-style:italic;color:var(--gold)}
@@ -166,10 +143,10 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
 </style>
 </head>
 <body>
-
+ 
 <div class="cursor" id="cur"></div>
 <div class="cursor-follower" id="fol"></div>
-
+ 
 <nav>
   <a href="#" class="nav-mark">AK · Portfolio</a>
   <ul class="nav-links">
@@ -180,7 +157,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <div class="status-bar">
   <span class="status-dot">Open to Work</span>
   <div class="status-roles">
@@ -192,7 +169,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     <span class="status-role">Strategy &amp; Ops</span>
   </div>
 </div>
-
+ 
 <section class="hero">
   <div class="hero-left">
     <p class="hero-index">001 / Introduction</p>
@@ -215,7 +192,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
         <span class="stat-l">Years Professional Experience</span>
       </div>
       <div class="stat-row">
-        <span class="stat-n">2</span>
+        <span class="stat-n">3</span>
         <span class="stat-l">Live Deployed Dashboards</span>
       </div>
       <div class="stat-row">
@@ -233,9 +210,9 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     </div>
   </div>
 </section>
-
+ 
 <div class="rule"></div>
-
+ 
 <section class="section" id="about">
   <div class="section-header r">
     <span class="section-num">002</span>
@@ -246,7 +223,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       <p>I started as a <strong>mechanical engineer</strong> — trained to find where systems break and rebuild them stronger. That problem-solving lens never left me, even when I moved into software.</p>
       <p>At <strong>Siemens</strong>, I shipped production code, ran sprints, managed cross-team dependencies. And I learned something important: the hardest engineering problem isn't technical. It's getting fifteen people to move in the same direction.</p>
       <p>I was in the room when business decisions were made. But I was the third person watching — not the one driving. That gap, between <em>understanding execution</em> and <em>owning outcomes</em>, is exactly what brought me to UMass Amherst.</p>
-      <p>Now I build systems that don't just surface data — they tell you what to <strong>do next</strong>. A supply chain risk engine. A churn prediction model. An executive memo that says: here's what the data found, here's what leadership should act on.</p>
+      <p>Now I build systems that don't just surface data — they tell you what to <strong>do next</strong>. A supply chain risk engine. A churn prediction model. A technical program dashboard that says: here's why the launch is at risk, here's what to do.</p>
       <p>That's the work. <em>Analytical enough to find the insight. Strategic enough to deliver it.</em></p>
     </div>
     <div class="timeline r3">
@@ -255,11 +232,11 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       <div class="tl-item"><div class="tl-year">22–24</div><div class="tl-text"><strong>Associate SWE · Siemens</strong>Agile delivery, 20+ components, cross-team PM</div></div>
       <div class="tl-item"><div class="tl-year">2024</div><div class="tl-text"><strong>MS Engineering Management</strong>UMass Amherst · GPA 3.82 · The pivot.</div></div>
       <div class="tl-item"><div class="tl-year">2025</div><div class="tl-text"><strong>PM Intern · Fabwright Origins</strong>Ops dashboards, cross-functional workflows</div></div>
-      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-text"><strong>Built 2 live analytics platforms</strong>Supply chain risk + SaaS churn intelligence</div></div>
+      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-text"><strong>Built 3 live analytics & PM platforms</strong>Supply chain · SaaS churn · AI launch readiness</div></div>
     </div>
   </div>
 </section>
-
+ 
 <section class="section section-alt" id="experience">
   <div class="section-header r">
     <span class="section-num">003</span>
@@ -313,13 +290,15 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     </div>
   </div>
 </section>
-
+ 
 <section class="section" id="projects">
   <div class="section-header r">
     <span class="section-num">004</span>
     <h2 class="section-ttl">Built from <strong>real problems</strong></h2>
   </div>
   <div class="projects-layout">
+ 
+    <!-- PROJECT 01 -->
     <div class="proj-card r">
       <div class="proj-left">
         <div class="proj-num">Project 01</div>
@@ -344,7 +323,8 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
         </div>
       </div>
     </div>
-
+ 
+    <!-- PROJECT 02 -->
     <div class="proj-card r">
       <div class="proj-left">
         <div class="proj-num">Project 02</div>
@@ -369,8 +349,36 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
         </div>
       </div>
     </div>
+ 
+    <!-- PROJECT 03 -->
+    <div class="proj-card r">
+      <div class="proj-left">
+        <div class="proj-num">Project 03</div>
+        <div class="proj-tag">Technical PM · Manufacturing AI · Program Management</div>
+        <h3 class="proj-title">AI Launch Readiness Command Center</h3>
+        <p class="proj-desc">End-to-end technical program simulation for deploying an AI-powered visual defect detection system in a manufacturing environment. Managed 7 phases, 25 tasks, and 6 cross-functional teams using Hybrid Agile-Waterfall methodology — with a live KPI dashboard, RAID log, risk register, change control log, and stakeholder matrix.</p>
+        <div class="proj-links">
+          <a href="https://ai-launch-readiness-command-center-mq8vzi5ze62ishalmilriu.streamlit.app/" target="_blank" class="plink live">↗ Live Dashboard</a>
+          <a href="https://github.com/Akshada2412/ai-launch-readiness-command-center" target="_blank" class="plink code">GitHub</a>
+        </div>
+      </div>
+      <div class="proj-right">
+        <div class="proj-metrics-list">
+          <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>7 phases · 25 tasks · 7 milestones</strong> — May to Sep 2026 · 19 weeks</div></div>
+          <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>RAID log · Risk register · Change control</strong> — 9 items, 8 risks P×I scored, 7 CRs</div></div>
+          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>UAT Cycle 1: <strong>17/20 passed (85%)</strong> — below 95% threshold → AT RISK</div></div>
+          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Tools: <strong>Smartsheet · Notion · Streamlit</strong> · Hybrid Agile-Waterfall</div></div>
+          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Data-driven <strong>NO-GO</strong> launch recommendation — objective go/no-go framework</div></div>
+        </div>
+        <div class="proj-stack">
+          <span class="stk">Python</span><span class="stk">Streamlit</span><span class="stk">Smartsheet</span><span class="stk">Notion</span><span class="stk">RAID</span><span class="stk">Risk Register</span><span class="stk">Agile-Waterfall</span>
+        </div>
+      </div>
+    </div>
+ 
   </div>
-
+ 
+  <!-- SECONDARY PROJECTS -->
   <div class="proj-sm r">
     <div class="proj-sm-card">
       <div class="proj-sm-tag">Product · AI · Roadmap</div>
@@ -392,7 +400,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     </div>
   </div>
 </section>
-
+ 
 <section class="section section-alt" id="skills">
   <div class="section-header r">
     <span class="section-num">005</span>
@@ -402,7 +410,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     <div class="skill-block">
       <div class="sk-label">PM &amp; Delivery</div>
       <div class="sk-items">
-        <span class="sk-item">Agile · Scrum</span><span class="sk-item">Sprint Planning</span><span class="sk-item">SDLC</span><span class="sk-item">WBS</span><span class="sk-item">Gantt Charts</span><span class="sk-item">Critical Path</span><span class="sk-item">Risk Management</span><span class="sk-item">Stakeholder Mgmt</span><span class="sk-item">Jira</span><span class="sk-item">Asana</span><span class="sk-item">Confluence</span><span class="sk-item">MS Project</span>
+        <span class="sk-item">Agile · Scrum</span><span class="sk-item">Sprint Planning</span><span class="sk-item">SDLC</span><span class="sk-item">WBS</span><span class="sk-item">Gantt Charts</span><span class="sk-item">Critical Path</span><span class="sk-item">Risk Management</span><span class="sk-item">Stakeholder Mgmt</span><span class="sk-item">RAID Log</span><span class="sk-item">Change Control</span><span class="sk-item">Jira</span><span class="sk-item">Asana</span><span class="sk-item">Smartsheet</span><span class="sk-item">Confluence</span><span class="sk-item">MS Project</span>
       </div>
     </div>
     <div class="skill-block">
@@ -432,7 +440,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     <span class="cert">CAPM — In Preparation</span>
   </div>
 </section>
-
+ 
 <section class="section" id="contact">
   <div class="section-header r">
     <span class="section-num">006</span>
@@ -465,15 +473,19 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
         <div class="c-icon">↗</div>
         <div><div class="c-label">Live Project 02</div><div class="c-val">Product Ops KPI System</div></div>
       </a>
+      <a href="https://ai-launch-readiness-command-center-mq8vzi5ze62ishalmilriu.streamlit.app/" target="_blank" class="c-link">
+        <div class="c-icon">↗</div>
+        <div><div class="c-label">Live Project 03</div><div class="c-val">AI Launch Readiness Command Center</div></div>
+      </a>
     </div>
   </div>
 </section>
-
+ 
 <footer>
   <p>© 2026 · Akshada Karade · Built with intention, not a template.</p>
   <p>MS Engineering Management · UMass Amherst · +1 (413) 210-7018</p>
 </footer>
-
+ 
 <script>
 const cur=document.getElementById('cur'),fol=document.getElementById('fol');
 let mx=0,my=0,fx=0,fy=0;
