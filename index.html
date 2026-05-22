@@ -83,24 +83,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:
 .exp-pts li::before{content:'';position:absolute;left:0;top:0.65rem;width:5px;height:1px;background:var(--gold)}
 .exp-pts li strong{color:var(--ink)}
 .projects-layout{display:flex;flex-direction:column;gap:2px}
-.proj-card{display:grid;grid-template-columns:1fr 340px;background:var(--bg2);border:1px solid var(--border2);border-radius:4px;overflow:hidden;transition:all 0.3s}
+.proj-card{display:grid;grid-template-columns:1fr 380px;background:var(--bg2);border:1px solid var(--border2);border-radius:4px;overflow:hidden;transition:all 0.3s}
 .proj-card:hover{border-color:rgba(201,168,76,0.3);transform:translateX(4px)}
 .proj-left{padding:3rem;border-right:1px solid var(--border2)}
 .proj-right{padding:3rem;background:var(--bg3);display:flex;flex-direction:column;justify-content:space-between}
 .proj-num{font-family:var(--mono);font-size:0.62rem;color:var(--ink3);letter-spacing:0.2em;margin-bottom:1rem}
 .proj-tag{display:inline-block;font-family:var(--mono);font-size:0.62rem;color:var(--gold);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.15);padding:0.2rem 0.7rem;border-radius:2px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}
 .proj-title{font-family:var(--serif);font-size:1.7rem;color:var(--ink);line-height:1.15;margin-bottom:1rem}
-.proj-desc{font-size:0.87rem;color:var(--ink2);line-height:1.75;margin-bottom:2rem}
-.proj-links{display:flex;gap:0.75rem}
+.proj-desc{font-size:0.87rem;color:var(--ink2);line-height:1.75;margin-bottom:1.5rem}
+.proj-desc strong{color:var(--ink)}
+.proj-methodology{margin-bottom:1.5rem}
+.proj-methodology-label{font-family:var(--mono);font-size:0.62rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.75rem}
+.proj-methodology-pts{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+.proj-methodology-pts li{font-size:0.83rem;color:var(--ink2);line-height:1.6;padding-left:1.1rem;position:relative}
+.proj-methodology-pts li::before{content:'';position:absolute;left:0;top:0.6rem;width:4px;height:1px;background:var(--gold)}
+.proj-methodology-pts li strong{color:var(--ink)}
+.proj-links{display:flex;gap:0.75rem;flex-wrap:wrap}
 .plink{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--syne);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.65rem 1.25rem;border-radius:2px;text-decoration:none;transition:all 0.2s}
 .plink.live{background:var(--gold);color:var(--bg)}
 .plink.live:hover{background:var(--gold2)}
 .plink.code{background:transparent;color:var(--ink2);border:1px solid var(--border2)}
 .plink.code:hover{border-color:var(--gold);color:var(--gold)}
-.proj-metrics-list{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2rem}
+.proj-metrics-list{display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1.5rem}
 .proj-metric{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.8rem;color:var(--ink2);line-height:1.55}
 .proj-metric-icon{font-family:var(--mono);font-size:0.65rem;color:var(--gold);flex-shrink:0;padding-top:0.15rem}
 .proj-metric strong{color:var(--ink)}
+.proj-tabs{margin-bottom:1.25rem}
+.proj-tabs-label{font-family:var(--mono);font-size:0.62rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem}
+.proj-tab-items{display:flex;flex-wrap:wrap;gap:0.35rem}
+.proj-tab-item{font-family:var(--mono);font-size:0.62rem;color:var(--ink2);background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);padding:0.2rem 0.6rem;border-radius:2px}
 .proj-stack{display:flex;flex-wrap:wrap;gap:0.35rem}
 .stk{font-family:var(--mono);font-size:0.62rem;color:var(--ink3);background:rgba(238,234,224,0.03);border:1px solid var(--border2);padding:0.2rem 0.55rem;border-radius:2px}
 .proj-sm{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:2px}
@@ -143,10 +154,10 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
 </style>
 </head>
 <body>
- 
+
 <div class="cursor" id="cur"></div>
 <div class="cursor-follower" id="fol"></div>
- 
+
 <nav>
   <a href="#" class="nav-mark">AK · Portfolio</a>
   <ul class="nav-links">
@@ -157,7 +168,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
- 
+
 <div class="status-bar">
   <span class="status-dot">Open to Work</span>
   <div class="status-roles">
@@ -165,16 +176,16 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     <span class="status-role">Data Analyst</span>
     <span class="status-role">Product Analyst</span>
     <span class="status-role">Operations Analyst</span>
+    <span class="status-role">Supply Chain Analyst</span>
     <span class="status-role">Technical PM</span>
-    <span class="status-role">Strategy &amp; Ops</span>
   </div>
 </div>
- 
+
 <section class="hero">
   <div class="hero-left">
     <p class="hero-index">001 / Introduction</p>
     <h1 class="hero-name">Akshada<br><em>Karade</em></h1>
-    <p class="hero-title">PM · Data · Operations · Product</p>
+    <p class="hero-title">PM · Data · Supply Chain · Product Analytics</p>
     <p class="hero-statement">
       I spent years in corporate watching the business grow — always the third person in the room, never the one driving it. That question — <strong>"how does this actually work?"</strong> — brought me back to school, into data, and into product. Now I build the systems that answer it.
     </p>
@@ -210,9 +221,10 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     </div>
   </div>
 </section>
- 
+
 <div class="rule"></div>
- 
+
+<!-- ABOUT -->
 <section class="section" id="about">
   <div class="section-header r">
     <span class="section-num">002</span>
@@ -221,9 +233,9 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
   <div class="about-layout">
     <div class="about-body r2">
       <p>I started as a <strong>mechanical engineer</strong> — trained to find where systems break and rebuild them stronger. That problem-solving lens never left me, even when I moved into software.</p>
-      <p>At <strong>Siemens</strong>, I shipped production code, ran sprints, managed cross-team dependencies. And I learned something important: the hardest engineering problem isn't technical. It's getting fifteen people to move in the same direction.</p>
+      <p>At <strong>Siemens</strong>, I shipped production code, ran sprints, managed cross-team dependencies across 20+ UI components and 6 global Agile teams. And I learned something important: the hardest engineering problem isn't technical. It's getting fifteen people to move in the same direction.</p>
       <p>I was in the room when business decisions were made. But I was the third person watching — not the one driving. That gap, between <em>understanding execution</em> and <em>owning outcomes</em>, is exactly what brought me to UMass Amherst.</p>
-      <p>Now I build systems that don't just surface data — they tell you what to <strong>do next</strong>. A supply chain risk engine. A churn prediction model. A technical program dashboard that says: here's why the launch is at risk, here's what to do.</p>
+      <p>Now I build systems that don't just surface data — they tell you what to <strong>do next</strong>. A supply chain risk engine with demand forecasting and inventory optimization. A churn prediction model that scores every user in real time. A technical program dashboard that says: here's why the launch is at risk, here's what to do about it.</p>
       <p>That's the work. <em>Analytical enough to find the insight. Strategic enough to deliver it.</em></p>
     </div>
     <div class="timeline r3">
@@ -232,18 +244,20 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       <div class="tl-item"><div class="tl-year">22–24</div><div class="tl-text"><strong>Associate SWE · Siemens</strong>Agile delivery, 20+ components, cross-team PM</div></div>
       <div class="tl-item"><div class="tl-year">2024</div><div class="tl-text"><strong>MS Engineering Management</strong>UMass Amherst · GPA 3.82 · The pivot.</div></div>
       <div class="tl-item"><div class="tl-year">2025</div><div class="tl-text"><strong>PM Intern · Fabwright Origins</strong>Ops dashboards, cross-functional workflows</div></div>
-      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-text"><strong>Built 3 live analytics & PM platforms</strong>Supply chain · SaaS churn · AI launch readiness</div></div>
+      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-text"><strong>Built 3 live analytics & PM platforms</strong>Supply chain · SaaS product analytics · AI launch readiness</div></div>
     </div>
   </div>
 </section>
- 
+
+<!-- EXPERIENCE -->
 <section class="section section-alt" id="experience">
   <div class="section-header r">
     <span class="section-num">003</span>
     <h2 class="section-ttl">Where I've <strong>delivered</strong></h2>
   </div>
-  <div class="r"><span class="exp-total-badge">⏱ ~3 Years Cumulative Professional Experience</span></div>
+  <div class="r"><span class="exp-total-badge">3+ Years Cumulative Professional Experience</span></div>
   <div class="exp-list">
+
     <div class="exp-item r">
       <div>
         <div class="exp-period">Aug 2025 – Dec 2025</div>
@@ -253,12 +267,13 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       <div>
         <div class="exp-role">Project Management Intern</div>
         <ul class="exp-pts">
-          <li>Defined &amp; standardized cross-functional workflows across Design, Sales, Fabrication &amp; Installation using <strong>Asana</strong> — streamlined 4-team handoffs</li>
-          <li>Built operational dashboards tracking <strong>estimator KPIs, milestones, and quality metrics</strong> — enabling data-driven decisions for project leads</li>
-          <li>Led stakeholder communication, scope alignment, and change management across active projects</li>
+          <li>Defined and standardized cross-functional PM workflows across Design, Sales, Fabrication, and Installation using <strong>Asana</strong> — mapped task dependencies, established milestone gates and SLA tracking frameworks, reducing 4-team handoff delays through structured delivery governance</li>
+          <li>Built Excel-based operational dashboards (Pivot Tables, Power Query, Macros) tracking <strong>estimator KPIs, milestone completion rates, and quality metrics</strong> — enabled data-driven resource allocation for project leads across active portfolios</li>
+          <li>Led stakeholder communication, scope alignment, and change management initiatives — facilitated cross-functional alignment sessions, managed scope change requests, and drove SOP adoption across projects</li>
         </ul>
       </div>
     </div>
+
     <div class="exp-item r">
       <div>
         <div class="exp-period">Jul 2022 – Aug 2024</div>
@@ -268,12 +283,13 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       <div>
         <div class="exp-role">Associate Software Engineer</div>
         <ul class="exp-pts">
-          <li>Managed sprint delivery for <strong>20+ UI components</strong> (React, JS, HTML) — tracked in Jira, resolved cross-team dependencies</li>
-          <li>Automated <strong>100+ regression test cases</strong> (Jest, Cucumber, Jenkins) — reduced release risk</li>
-          <li>Resolved backend integration defects (C++); collaborated with QA &amp; PMs in Agile ceremonies</li>
+          <li>Managed sprint delivery for <strong>20+ UI components</strong> (React, JavaScript, HTML) across 6 global Agile teams — tracked dependencies in Jira, resolved cross-team blockers, and maintained on-time feature release management aligned to product roadmap</li>
+          <li>Automated <strong>100+ regression test cases</strong> (Jest, Cucumber, Jenkins), reducing QA overhead by 40% — built defect-trend reports with statistical summaries that informed sprint backlog prioritization and risk management decisions</li>
+          <li>Performed root-cause analysis on Teamcenter SLM workflow defects — identified recurring error patterns, documented PRD-aligned findings, and delivered business intelligence recommendations for sprint planning and KPI reporting to senior stakeholders</li>
         </ul>
       </div>
     </div>
+
     <div class="exp-item r">
       <div>
         <div class="exp-period">Jan 2022 – Jun 2022</div>
@@ -283,80 +299,154 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       <div>
         <div class="exp-role">Graduate Engineer Trainee</div>
         <ul class="exp-pts">
-          <li>Root-cause analysis on <strong>Teamcenter SLM workflows</strong> — reduced recurring defects</li>
-          <li>Contributed to sprint planning, estimation, and design reviews across Agile teams</li>
+          <li>Root-cause analysis on <strong>Teamcenter SLM workflows</strong> — reduced recurring defects, improving release quality through structured issue tracking and documentation</li>
+          <li>Contributed to sprint planning, effort estimation, and design reviews — aligned technical feasibility with UX delivery timelines across cross-functional Agile teams</li>
         </ul>
       </div>
     </div>
+
   </div>
 </section>
- 
+
+<!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="section-header r">
     <span class="section-num">004</span>
     <h2 class="section-ttl">Built from <strong>real problems</strong></h2>
   </div>
   <div class="projects-layout">
- 
+
     <!-- PROJECT 01 -->
     <div class="proj-card r">
       <div class="proj-left">
         <div class="proj-num">Project 01</div>
-        <div class="proj-tag">Supply Chain · Risk Analytics · HHI</div>
+        <div class="proj-tag">Supply Chain · Risk Analytics · Demand Forecasting · Inventory Optimization</div>
         <h3 class="proj-title">Supply Chain Risk Intelligence Platform</h3>
-        <p class="proj-desc">COVID-19 erased $328B in global trade in one year — because no one had visibility into supplier concentration risk. I built the system that surfaces it: an HHI-powered risk engine across 50 countries and 5 product categories, with a live executive dashboard and a full PM governance layer.</p>
+        <p class="proj-desc">
+          Global merchandise trade fell over <strong>$1.5 trillion in 2020</strong> (WTO data) — not because supply chain risk appeared overnight, but because nobody was measuring it before the crisis hit. I built the analytical framework that makes that risk visible and quantifiable.
+        </p>
+        <p class="proj-desc">
+          The platform applies the <strong>Herfindahl-Hirschman Index (HHI)</strong> — the same formula the US Department of Justice uses for antitrust analysis — to a modeled global trade network across 50 countries and 5 product categories, scoring supplier concentration risk in real time. It then layers in demand forecasting, inventory optimization, and a supplier performance scorecard to give procurement teams a complete decision-making infrastructure.
+        </p>
+        <div class="proj-methodology">
+          <div class="proj-methodology-label">What the platform covers</div>
+          <ul class="proj-methodology-pts">
+            <li><strong>HHI Risk Engine</strong> — concentration scoring across 50 countries, 5 categories, 5 years (2018–2022). Flags high-risk supplier dependencies with geo-risk weighting and executive risk register</li>
+            <li><strong>Demand Forecasting</strong> — Holt-Winters exponential smoothing model with 95% confidence intervals. Interactive forecast horizon (1–5 years) with projected growth/decline alerts by category</li>
+            <li><strong>Inventory Optimization</strong> — safety stock calculation at 95% service level, reorder point analysis, EOQ model, 12-month inventory cycle simulation, and lead time sensitivity analysis</li>
+            <li><strong>Supplier Scorecard</strong> — country-level risk scatter plot (concentration vs. geo-risk), performance scorecard table with dynamic risk labeling (Low / Medium / High Risk)</li>
+            <li><strong>Executive Recommendations</strong> — 5 data-driven recommendations that update dynamically based on selected category and lead time settings</li>
+          </ul>
+        </div>
         <div class="proj-links">
           <a href="https://supply-chain-risk-intelligence-gvc7bxaaez4m6tgv4duncf.streamlit.app/" target="_blank" class="plink live">↗ Live Dashboard</a>
           <a href="https://github.com/Akshada2412/supply-chain-risk-intelligence" target="_blank" class="plink code">GitHub</a>
         </div>
       </div>
       <div class="proj-right">
-        <div class="proj-metrics-list">
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>HHI Methodology</strong> — same formula used by the US Dept. of Justice for antitrust analysis</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Electronics = highest risk:</strong> China 17.2% share, geo risk score 7/10</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>COVID impact:</strong> $1.91T → $1.58T in one year — visualized on live dashboard</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Executive memo + risk register = <strong>full PM governance layer</strong></div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>50 countries · 5 products · 5 years · interactive filters</div></div>
+        <div>
+          <div class="proj-tabs">
+            <div class="proj-tabs-label">Dashboard Tabs</div>
+            <div class="proj-tab-items">
+              <span class="proj-tab-item">Risk Intelligence</span>
+              <span class="proj-tab-item">HHI Analysis</span>
+              <span class="proj-tab-item">Demand Forecasting</span>
+              <span class="proj-tab-item">Inventory Optimization</span>
+              <span class="proj-tab-item">Supplier Scorecard</span>
+              <span class="proj-tab-item">Executive Recommendations</span>
+            </div>
+          </div>
+          <div class="proj-metrics-list">
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>HHI Methodology</strong> — same concentration formula used by the US Dept. of Justice for antitrust analysis. Applied to supplier networks instead of market share</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Demand Forecasting</strong> — Holt-Winters model projecting import demand with 95% confidence intervals. Alerts procurement teams before contracting cycles</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Safety Stock & Reorder Point</strong> — inventory optimization at 95% service level across variable lead times (7–90 days). Lead time sensitivity analysis shows cost of delay</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>50 countries · 5 product categories · 5 years</strong> of modeled trade flows — interactive filters, geopolitical heatmap, live KPI dashboard</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Executive governance layer</strong> — risk register, supplier diversification recommendations, and procurement action items generated dynamically</div></div>
+          </div>
         </div>
         <div class="proj-stack">
-          <span class="stk">Python</span><span class="stk">SQL</span><span class="stk">SQLite</span><span class="stk">Streamlit</span><span class="stk">Plotly</span><span class="stk">HHI</span><span class="stk">Pandas</span>
+          <span class="stk">Python</span><span class="stk">SQL</span><span class="stk">SQLite</span><span class="stk">Streamlit</span><span class="stk">Plotly</span><span class="stk">HHI</span><span class="stk">Holt-Winters</span><span class="stk">statsmodels</span><span class="stk">Pandas</span><span class="stk">NumPy</span>
         </div>
       </div>
     </div>
- 
+
     <!-- PROJECT 02 -->
     <div class="proj-card r">
       <div class="proj-left">
         <div class="proj-num">Project 02</div>
-        <div class="proj-tag">SaaS · Product Analytics · ML</div>
+        <div class="proj-tag">SaaS · Product Analytics · ML · A/B Testing · Cohort Analysis</div>
         <h3 class="proj-title">Product Operations KPI Intelligence System</h3>
-        <p class="proj-desc">A full-stack SaaS analytics platform that tracks MRR trends, feature adoption, NPS, and churn risk — then flags at-risk accounts before they leave. Includes a Random Forest churn model (ROC-AUC 0.883), live ML-powered scoring on 1,000 users, and an executive product memo.</p>
+        <p class="proj-desc">
+          Most SaaS teams track NPS and session counts and call it product analytics. This platform goes deeper — it combines <strong>ML-powered churn prediction, funnel analysis, cohort retention, A/B testing, and DAU/MAU/LTV tracking</strong> into a single live dashboard that tells you not just what happened, but which users are about to leave and why.
+        </p>
+        <p class="proj-desc">
+          Built on a synthetic SaaS dataset of 1,000 users across 4 plan tiers, the platform surfaces insights that standard BI tools miss — including the discovery that <strong>support ticket volume is the single strongest predictor of churn</strong>, outranking session frequency and NPS by a wide margin.
+        </p>
+        <div class="proj-methodology">
+          <div class="proj-methodology-label">What the platform covers</div>
+          <ul class="proj-methodology-pts">
+            <li><strong>Churn Prediction Model</strong> — Random Forest on 8 behavioral features (ROC-AUC 0.883, 80% accuracy). Identified and resolved data leakage during ETL development. Live risk scoring on all 1,000 users with High / Medium / Low risk segmentation</li>
+            <li><strong>Conversion Funnel Analysis</strong> — Free → Starter → Pro → Enterprise funnel with stage-by-stage drop-off rates, activation gap identification, and conversion optimization recommendations</li>
+            <li><strong>Cohort Retention Heatmap</strong> — 10 monthly signup cohorts visualized as a color-coded retention grid. Surfaces best/worst cohorts and identifies the critical M2 retention cliff</li>
+            <li><strong>A/B Testing Framework</strong> — interactive experimentation simulator with statistical significance testing (t-test, p-value, confidence intervals). Go/no-go decision output based on pre-defined thresholds</li>
+            <li><strong>DAU/MAU/LTV Metrics</strong> — 90-day engagement trends with stickiness (DAU/MAU ratio), LTV breakdown by plan tier, monthly churn rate table, and north star metric tracking</li>
+          </ul>
+        </div>
         <div class="proj-links">
           <a href="https://appuct-ops-kpi-system-xzeyg9ghwb9zwrd4tkowof.streamlit.app/" target="_blank" class="plink live">↗ Live Dashboard</a>
           <a href="https://github.com/Akshada2412/product-ops-kpi-system" target="_blank" class="plink code">GitHub</a>
         </div>
       </div>
       <div class="proj-right">
-        <div class="proj-metrics-list">
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>ROC-AUC 0.883 · 80% accuracy</strong> — Random Forest on 8 behavioral features</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Enterprise = <strong>63.5% of MRR</strong> from only 9.5% of users</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Top churn predictor: <strong>support tickets (32.7%)</strong> — frustration before exit</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Caught &amp; resolved <strong>data leakage</strong> during model development</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Pro+ tier launch + enterprise retention recommendations in PM memo</div></div>
+        <div>
+          <div class="proj-tabs">
+            <div class="proj-tabs-label">Dashboard Tabs</div>
+            <div class="proj-tab-items">
+              <span class="proj-tab-item">Revenue & MRR</span>
+              <span class="proj-tab-item">User Engagement</span>
+              <span class="proj-tab-item">Churn Risk Model</span>
+              <span class="proj-tab-item">Funnel Analysis</span>
+              <span class="proj-tab-item">Cohort Retention</span>
+              <span class="proj-tab-item">A/B Testing</span>
+              <span class="proj-tab-item">DAU/MAU/LTV</span>
+            </div>
+          </div>
+          <div class="proj-metrics-list">
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>ROC-AUC 0.883 · 80% accuracy</strong> — Random Forest on 8 behavioral features. Top churn predictor: support ticket volume at 32.7% feature importance</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Enterprise = <strong>63.5% of MRR from just 9.5% of users</strong> — revenue concentration risk surfaced through SQL-driven segmentation</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>A/B test framework</strong> — statistical significance testing with t-test, p-value, and 95% confidence intervals. Interactive sliders for group size and conversion rates</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Cohort retention</strong> — 10-cohort heatmap showing product improvement over time. M2 retention cliff identified as key intervention point</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Data leakage detected & resolved</strong> during ETL pipeline development — model rebuild with proper train/test isolation</div></div>
+          </div>
         </div>
         <div class="proj-stack">
-          <span class="stk">Python</span><span class="stk">SQL</span><span class="stk">Scikit-learn</span><span class="stk">Random Forest</span><span class="stk">Streamlit</span><span class="stk">Plotly</span><span class="stk">Pandas</span>
+          <span class="stk">Python</span><span class="stk">SQL</span><span class="stk">Scikit-learn</span><span class="stk">Random Forest</span><span class="stk">Streamlit</span><span class="stk">Plotly</span><span class="stk">scipy</span><span class="stk">A/B Testing</span><span class="stk">Cohort Analysis</span><span class="stk">Pandas</span>
         </div>
       </div>
     </div>
- 
+
     <!-- PROJECT 03 -->
     <div class="proj-card r">
       <div class="proj-left">
         <div class="proj-num">Project 03</div>
-        <div class="proj-tag">Technical PM · Manufacturing AI · Program Management</div>
+        <div class="proj-tag">Technical PM · Program Management · AI Deployment · Launch Readiness</div>
         <h3 class="proj-title">AI Launch Readiness Command Center</h3>
-        <p class="proj-desc">End-to-end technical program simulation for deploying an AI-powered visual defect detection system in a manufacturing environment. Managed 7 phases, 25 tasks, and 6 cross-functional teams using Hybrid Agile-Waterfall methodology — with a live KPI dashboard, RAID log, risk register, change control log, and stakeholder matrix.</p>
+        <p class="proj-desc">
+          The hardest PM call isn't technical — it's telling a room full of stakeholders, after weeks of work and mounting pressure, that the system isn't ready. This project simulates exactly that: a full technical program management cycle for deploying an <strong>AI-powered visual defect detection system</strong> in a manufacturing environment, ending in a data-driven NO-GO launch recommendation.
+        </p>
+        <p class="proj-desc">
+          Built using <strong>Hybrid Agile-Waterfall methodology</strong> across 7 phases and 6 cross-functional teams, the project demonstrates how pre-defined KPI thresholds — not gut feel — should drive go/no-go decisions. Every recommendation is anchored to quantified data logged in a live PM governance dashboard.
+        </p>
+        <div class="proj-methodology">
+          <div class="proj-methodology-label">PM governance layer</div>
+          <ul class="proj-methodology-pts">
+            <li><strong>Project Charter + WBS</strong> — 7 phases, 25 tasks, 7 milestones, 19-week timeline across Engineering, AI/Data, Manufacturing, Supply Chain, Quality, and Operations teams</li>
+            <li><strong>RAID Log</strong> — 9 items tracked across Risks, Assumptions, Issues, and Dependencies. 5 of 8 items were reactive — a key signal the program wasn't ready to go live</li>
+            <li><strong>Risk Register (P×I scored)</strong> — 8 risks scored by Probability × Impact. R1 (supplier delay) scored 25/25 — maximum risk — and cascaded into two downstream phases</li>
+            <li><strong>Change Request Log</strong> — 7 CRs logged, 6 approved, 1 rejected (scope descope request to hit timeline). Scope protection under deadline pressure = program discipline</li>
+            <li><strong>UAT Governance</strong> — Cycle 1 pass rate: 85% vs pre-defined 95% threshold. Data pipeline showing intermittent failures. Recommendation: AT RISK / NO-GO with structured escalation path</li>
+          </ul>
+        </div>
         <div class="proj-links">
           <a href="https://ai-launch-readiness-command-center-mq8vzi5ze62ishalmilriu.streamlit.app/" target="_blank" class="plink live">↗ Live Dashboard</a>
           <a href="https://leather-pancake-8ef.notion.site/AI-Powered-Launch-Readiness-Command-Center-34e907e6d83580bc9410f638795ffd72" target="_blank" class="plink code">Case Study →</a>
@@ -364,44 +454,58 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
         </div>
       </div>
       <div class="proj-right">
-        <div class="proj-metrics-list">
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>7 phases · 25 tasks · 7 milestones</strong> — May to Sep 2026 · 19 weeks</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>RAID log · Risk register · Change control</strong> — 9 items, 8 risks P×I scored, 7 CRs</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>UAT Cycle 1: <strong>17/20 passed (85%)</strong> — below 95% threshold → AT RISK</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Tools: <strong>Smartsheet · Notion · Streamlit</strong> · Hybrid Agile-Waterfall</div></div>
-          <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Data-driven <strong>NO-GO</strong> launch recommendation — objective go/no-go framework</div></div>
+        <div>
+          <div class="proj-tabs">
+            <div class="proj-tabs-label">Dashboard Tabs</div>
+            <div class="proj-tab-items">
+              <span class="proj-tab-item">Program Overview</span>
+              <span class="proj-tab-item">Task Register</span>
+              <span class="proj-tab-item">RAID Log</span>
+              <span class="proj-tab-item">Risk Register</span>
+              <span class="proj-tab-item">Change Control</span>
+              <span class="proj-tab-item">Stakeholder Matrix</span>
+            </div>
+          </div>
+          <div class="proj-metrics-list">
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>7 phases · 25 tasks · 7 milestones</strong> — May to Sep 2026 · 19 weeks · 6 cross-functional teams</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>RAID log · Risk register · Change control</strong> — 9 items, 8 risks P×I scored (R1 = 25/25), 7 CRs including 1 rejected to protect MVP scope</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div>UAT Cycle 1: <strong>85% pass rate vs 95% threshold</strong> — objective data drove the NO-GO recommendation, not stakeholder pressure</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Pre-defined KPI thresholds</strong> — acceptance criteria set in Phase 1 before pressure started. Decision followed from data automatically</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div>Tools: <strong>Smartsheet · Notion · Streamlit · Hybrid Agile-Waterfall</strong> · Full Notion case study published</div></div>
+          </div>
         </div>
         <div class="proj-stack">
-          <span class="stk">Python</span><span class="stk">Streamlit</span><span class="stk">Smartsheet</span><span class="stk">Notion</span><span class="stk">RAID</span><span class="stk">Risk Register</span><span class="stk">Agile-Waterfall</span>
+          <span class="stk">Python</span><span class="stk">Streamlit</span><span class="stk">Smartsheet</span><span class="stk">Notion</span><span class="stk">RAID Log</span><span class="stk">Risk Register</span><span class="stk">Change Control</span><span class="stk">Hybrid Agile-Waterfall</span>
         </div>
       </div>
     </div>
- 
+
   </div>
- 
+
   <!-- SECONDARY PROJECTS -->
   <div class="proj-sm r">
     <div class="proj-sm-card">
       <div class="proj-sm-tag">Product · AI · Roadmap</div>
       <h4 class="proj-sm-title">AI Smart Waste Sorting System</h4>
-      <p class="proj-sm-desc">End-to-end product discovery: user research across 3 segments, 5+ competitor benchmarks, stakeholder personas, MVP roadmap with PESTEL + SWOT. Targeting universities and municipalities.</p>
-      <div class="proj-sm-result">Status: In Progress</div>
+      <p class="proj-sm-desc">End-to-end product discovery for an AI-powered waste sorting station. Conducted user research across 4 segments, defined personas, benchmarked 5+ competitors, authored 10 functional and non-functional requirements (PRD), and built a 4-phase GTM roadmap with OKRs. Applied PESTEL, SWOT, and 5C analysis. Targeting universities and municipalities.</p>
+      <div class="proj-sm-result">Status: In Progress · PRD Complete</div>
     </div>
     <div class="proj-sm-card">
       <div class="proj-sm-tag">Analytics · ML · Campaign</div>
       <h4 class="proj-sm-title">Campaign Targeting Optimization</h4>
-      <p class="proj-sm-desc">Behavioral feature engineering on 2,240 records. Improved responder sensitivity from 36% → 67%. Built executive Power BI-style dashboards for project sponsors.</p>
+      <p class="proj-sm-desc">Directed end-to-end analytics project on 2,240 customer records. Built ETL pipeline for data cleaning and wrangling, engineered behavioral features, selected optimal ML model (ROC = 0.87), and improved responder sensitivity from 36% to 67% — an 86% improvement. Delivered executive Power BI dashboards for stakeholder reporting.</p>
       <div class="proj-sm-result">ROC = 0.87 · Sensitivity +86%</div>
     </div>
     <div class="proj-sm-card">
       <div class="proj-sm-tag">PM · Agile · Delivery</div>
       <h4 class="proj-sm-title">GymPal — Social Fitness App</h4>
-      <p class="proj-sm-desc">Programs Tab Lead. End-to-end PM: scope, MVP, sprint roadmap, WBS, Gantt, critical path analysis. Risk assessment on payment flows. All milestones on schedule.</p>
-      <div class="proj-sm-result">All milestones on schedule</div>
+      <p class="proj-sm-desc">Programs Tab Lead. Owned full PM delivery: authored project charter, defined scope and MVP features, built WBS and Gantt chart, conducted critical path analysis, managed scope creep, and led risk assessment for payment-flow vulnerabilities with documented mitigation plans. All milestones delivered on schedule.</p>
+      <div class="proj-sm-result">All milestones on schedule · Full PM governance</div>
     </div>
   </div>
 </section>
- 
+
+<!-- SKILLS -->
 <section class="section section-alt" id="skills">
   <div class="section-header r">
     <span class="section-num">005</span>
@@ -409,27 +513,93 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
   </div>
   <div class="skills-layout r">
     <div class="skill-block">
-      <div class="sk-label">PM &amp; Delivery</div>
+      <div class="sk-label">PM & Delivery</div>
       <div class="sk-items">
-        <span class="sk-item">Agile · Scrum</span><span class="sk-item">Sprint Planning</span><span class="sk-item">SDLC</span><span class="sk-item">WBS</span><span class="sk-item">Gantt Charts</span><span class="sk-item">Critical Path</span><span class="sk-item">Risk Management</span><span class="sk-item">Stakeholder Mgmt</span><span class="sk-item">RAID Log</span><span class="sk-item">Change Control</span><span class="sk-item">Jira</span><span class="sk-item">Asana</span><span class="sk-item">Smartsheet</span><span class="sk-item">Confluence</span><span class="sk-item">MS Project</span>
+        <span class="sk-item">Agile · Scrum · SAFe</span>
+        <span class="sk-item">Sprint Planning</span>
+        <span class="sk-item">SDLC</span>
+        <span class="sk-item">WBS</span>
+        <span class="sk-item">Gantt Charts</span>
+        <span class="sk-item">Critical Path</span>
+        <span class="sk-item">Risk Management</span>
+        <span class="sk-item">Stakeholder Mgmt</span>
+        <span class="sk-item">RAID Log</span>
+        <span class="sk-item">Risk Register</span>
+        <span class="sk-item">Change Control</span>
+        <span class="sk-item">Project Charter</span>
+        <span class="sk-item">Budget Tracking</span>
+        <span class="sk-item">Release Management</span>
+        <span class="sk-item">Launch Readiness</span>
+        <span class="sk-item">OKRs</span>
+        <span class="sk-item">Jira</span>
+        <span class="sk-item">Asana</span>
+        <span class="sk-item">Smartsheet</span>
+        <span class="sk-item">Confluence</span>
+        <span class="sk-item">MS Project</span>
+        <span class="sk-item">Notion</span>
       </div>
     </div>
     <div class="skill-block">
-      <div class="sk-label">Analytics &amp; ML</div>
+      <div class="sk-label">Analytics & ML</div>
       <div class="sk-items">
-        <span class="sk-item">Python</span><span class="sk-item">SQL</span><span class="sk-item">R</span><span class="sk-item">Pandas · NumPy</span><span class="sk-item">Scikit-learn</span><span class="sk-item">Random Forest</span><span class="sk-item">LASSO Regression</span><span class="sk-item">Feature Engineering</span><span class="sk-item">HHI Methodology</span><span class="sk-item">SQLite · CTEs</span>
+        <span class="sk-item">Python</span>
+        <span class="sk-item">SQL (CTEs, Window Functions)</span>
+        <span class="sk-item">R</span>
+        <span class="sk-item">Pandas · NumPy</span>
+        <span class="sk-item">Scikit-learn</span>
+        <span class="sk-item">Random Forest</span>
+        <span class="sk-item">LASSO Regression</span>
+        <span class="sk-item">Feature Engineering</span>
+        <span class="sk-item">A/B Testing</span>
+        <span class="sk-item">Experimentation Framework</span>
+        <span class="sk-item">Cohort Analysis</span>
+        <span class="sk-item">Funnel Analysis</span>
+        <span class="sk-item">Churn Modeling</span>
+        <span class="sk-item">DAU/MAU/LTV</span>
+        <span class="sk-item">Demand Forecasting</span>
+        <span class="sk-item">Holt-Winters</span>
+        <span class="sk-item">Inventory Optimization</span>
+        <span class="sk-item">Safety Stock Modeling</span>
+        <span class="sk-item">HHI Methodology</span>
+        <span class="sk-item">ETL Pipelines</span>
+        <span class="sk-item">Root Cause Analysis</span>
+        <span class="sk-item">Statistical Significance Testing</span>
       </div>
     </div>
     <div class="skill-block">
-      <div class="sk-label">Visualization &amp; BI</div>
+      <div class="sk-label">Visualization & BI</div>
       <div class="sk-items">
-        <span class="sk-item">Streamlit</span><span class="sk-item">Plotly</span><span class="sk-item">Power BI</span><span class="sk-item">Tableau</span><span class="sk-item">Advanced Excel</span><span class="sk-item">Power Query</span><span class="sk-item">Pivot Tables</span><span class="sk-item">Dashboard Design</span><span class="sk-item">Executive Reporting</span>
+        <span class="sk-item">Streamlit</span>
+        <span class="sk-item">Plotly</span>
+        <span class="sk-item">Power BI</span>
+        <span class="sk-item">Tableau</span>
+        <span class="sk-item">Advanced Excel</span>
+        <span class="sk-item">Power Query</span>
+        <span class="sk-item">Pivot Tables</span>
+        <span class="sk-item">Dashboard Design</span>
+        <span class="sk-item">Executive Reporting</span>
+        <span class="sk-item">KPI Frameworks</span>
+        <span class="sk-item">Ad Hoc Analysis</span>
+        <span class="sk-item">Business Intelligence</span>
       </div>
     </div>
     <div class="skill-block">
-      <div class="sk-label">Engineering &amp; Dev</div>
+      <div class="sk-label">Supply Chain & Engineering</div>
       <div class="sk-items">
-        <span class="sk-item">React</span><span class="sk-item">JavaScript</span><span class="sk-item">HTML · CSS</span><span class="sk-item">C++</span><span class="sk-item">Jest · Cucumber</span><span class="sk-item">Jenkins</span><span class="sk-item">Git · GitHub</span><span class="sk-item">CI/CD</span>
+        <span class="sk-item">Supply Chain Risk Analysis</span>
+        <span class="sk-item">Supplier Risk Assessment</span>
+        <span class="sk-item">Logistics Analytics</span>
+        <span class="sk-item">Procurement Analysis</span>
+        <span class="sk-item">Vendor Performance Mgmt</span>
+        <span class="sk-item">MRP · ERP (exposure)</span>
+        <span class="sk-item">React</span>
+        <span class="sk-item">JavaScript</span>
+        <span class="sk-item">HTML · CSS</span>
+        <span class="sk-item">C++</span>
+        <span class="sk-item">Jest · Cucumber</span>
+        <span class="sk-item">Jenkins</span>
+        <span class="sk-item">Git · GitHub</span>
+        <span class="sk-item">CI/CD</span>
       </div>
     </div>
   </div>
@@ -438,10 +608,12 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     <span class="cert">Atlassian Agile PM</span>
     <span class="cert">Microsoft Power BI</span>
     <span class="cert">Decision Analytics</span>
-    <span class="cert">CAPM — In Preparation</span>
+    <span class="cert">CAPM — In Preparation (PMI)</span>
+    <span class="cert">STEM OPT Authorized (3 Years)</span>
   </div>
 </section>
- 
+
+<!-- CONTACT -->
 <section class="section" id="contact">
   <div class="section-header r">
     <span class="section-num">006</span>
@@ -450,7 +622,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
   <div class="contact-layout">
     <div class="r">
       <p class="contact-headline">Looking for someone who can <em>analyze, build, and deliver?</em></p>
-      <p class="contact-body">I'm actively looking for roles in <strong>Project Management, Data Analytics, Product Analytics, and Operations</strong>. Based in Amherst, MA — open to remote and hybrid across the US.<br><br>If you're building something and need someone who sits at the intersection of data and delivery — let's talk.</p>
+      <p class="contact-body">I'm actively looking for roles in <strong>Project Management, Data Analytics, Product Analytics, Supply Chain Analytics, and Operations</strong>. Based in Boston, MA — open to remote and hybrid across the US. STEM OPT authorized for 3 years.<br><br>If you're building something and need someone who sits at the intersection of data and delivery — let's talk.</p>
       <a href="mailto:akshadakarade@gmail.com" class="btn-gold">Send a message →</a>
     </div>
     <div class="contact-list r2">
@@ -468,11 +640,11 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       </a>
       <a href="https://supply-chain-risk-intelligence-gvc7bxaaez4m6tgv4duncf.streamlit.app/" target="_blank" class="c-link">
         <div class="c-icon">↗</div>
-        <div><div class="c-label">Live Project 01</div><div class="c-val">Supply Chain Risk Intelligence</div></div>
+        <div><div class="c-label">Live Project 01</div><div class="c-val">Supply Chain Risk Intelligence Platform</div></div>
       </a>
       <a href="https://appuct-ops-kpi-system-xzeyg9ghwb9zwrd4tkowof.streamlit.app/" target="_blank" class="c-link">
         <div class="c-icon">↗</div>
-        <div><div class="c-label">Live Project 02</div><div class="c-val">Product Ops KPI System</div></div>
+        <div><div class="c-label">Live Project 02</div><div class="c-val">Product Operations KPI Intelligence System</div></div>
       </a>
       <a href="https://ai-launch-readiness-command-center-mq8vzi5ze62ishalmilriu.streamlit.app/" target="_blank" class="c-link">
         <div class="c-icon">↗</div>
@@ -481,12 +653,12 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     </div>
   </div>
 </section>
- 
+
 <footer>
   <p>© 2026 · Akshada Karade · Built with intention, not a template.</p>
-  <p>MS Engineering Management · UMass Amherst · +1 (413) 210-7018</p>
+  <p>MS Engineering Management · UMass Amherst · Boston, MA · +1 (413) 210-7018</p>
 </footer>
- 
+
 <script>
 const cur=document.getElementById('cur'),fol=document.getElementById('fol');
 let mx=0,my=0,fx=0,fy=0;
