@@ -203,7 +203,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
         <span class="stat-l">Years Professional Experience</span>
       </div>
       <div class="stat-row">
-        <span class="stat-n">3</span>
+        <span class="stat-n">4</span>
         <span class="stat-l">Live Deployed Dashboards</span>
       </div>
       <div class="stat-row">
@@ -244,7 +244,7 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       <div class="tl-item"><div class="tl-year">22–24</div><div class="tl-text"><strong>Associate SWE · Siemens</strong>Agile delivery, 20+ components, cross-team PM</div></div>
       <div class="tl-item"><div class="tl-year">2024</div><div class="tl-text"><strong>MS Engineering Management</strong>UMass Amherst · GPA 3.82 · The pivot.</div></div>
       <div class="tl-item"><div class="tl-year">2025</div><div class="tl-text"><strong>PM Intern · Fabwright Origins</strong>Ops dashboards, cross-functional workflows</div></div>
-      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-text"><strong>Built 3 live analytics & PM platforms</strong>Supply chain · SaaS product analytics · AI launch readiness</div></div>
+      <div class="tl-item"><div class="tl-year">2026</div><div class="tl-text"><strong>Built 4 live analytics & PM platforms</strong>Supply chain · Inventory Optimization · SaaS product analytics · AI launch readiness</div></div>
     </div>
   </div>
 </section>
@@ -374,6 +374,60 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
     <div class="proj-card r">
       <div class="proj-left">
         <div class="proj-num">Project 02</div>
+        <div class="proj-tag">Supply Chain · Inventory Optimization · Six Sigma · Demand Forecasting</div>
+        <h3 class="proj-title">Inventory Optimization &amp; Working Capital Intelligence</h3>
+        <p class="proj-desc">
+          Spare-parts inventory traps cash in two directions at once — capital frozen in parts that never sell, and stockouts on parts whose demand was simply too erratic to see. This platform analyzes <strong>2,674 automotive parts across 51 months of real demand history</strong> (Hyndman Car Parts dataset) and quantifies both sides of that problem end to end.
+        </p>
+        <p class="proj-desc">
+          It runs the full decision-science stack: ABC/XYZ segmentation, Wilson EOQ with safety stock and reorder points, a newsvendor model, Croston/SBA intermittent-demand forecasting selected per part by MASE, and a Six Sigma capability layer. The headline finding — <strong>only 1.2% of parts are statistically capable under classical SPC</strong> — is itself the insight: intermittent demand defeats textbook control methods and demands the specialized techniques applied here.
+        </p>
+        <div class="proj-methodology">
+          <div class="proj-methodology-label">What the platform covers</div>
+          <ul class="proj-methodology-pts">
+            <li><strong>ABC/XYZ Classification</strong> — 9-box segmentation across value (Pareto, A-class holds 80% of value) and demand variability. 82.4% of parts are Z-class, establishing an intermittent-demand catalog</li>
+            <li><strong>EOQ Policy Engine</strong> — Wilson EOQ, safety stock at 95% service level, and reorder points. A computed violation flag shows 81% of parts (100% of C-class) order &gt;50% off the economic optimum</li>
+            <li><strong>Newsvendor Optimization</strong> — critical-ratio order sizing surfacing $654K in annual savings potential from right-sizing quantities</li>
+            <li><strong>Intermittent Forecasting</strong> — Naive / Croston / SBA evaluated per part, each assigned the method with the lowest MASE. No single method wins: SBA 1,411 parts, Croston 944, Naive 319</li>
+            <li><strong>Six Sigma Layer</strong> — Cpk process capability, SPC control charts, and a full DMAIC framework with root-cause analysis, every entry anchored to computed data</li>
+          </ul>
+        </div>
+        <div class="proj-links">
+          <a href="https://inventory-optimization-dashboard.onrender.com/" target="_blank" class="plink live">↗ Live Dashboard</a>
+          <a href="https://github.com/Akshada2412/inventory-optimization-dashboard" target="_blank" class="plink code">GitHub</a>
+        </div>
+      </div>
+      <div class="proj-right">
+        <div>
+          <div class="proj-tabs">
+            <div class="proj-tabs-label">Dashboard Tabs</div>
+            <div class="proj-tab-items">
+              <span class="proj-tab-item">Executive Overview</span>
+              <span class="proj-tab-item">ABC-XYZ</span>
+              <span class="proj-tab-item">Inventory Policy</span>
+              <span class="proj-tab-item">Forecasting</span>
+              <span class="proj-tab-item">Six Sigma</span>
+              <span class="proj-tab-item">DMAIC</span>
+            </div>
+          </div>
+          <div class="proj-metrics-list">
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Real demand foundation</strong> — 2,674 parts, 51 months, Hyndman Car Parts dataset. Financial layers modeled with documented, per-field methodology</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>$4.81M working capital analyzed</strong> — $349K isolated in dead stock (11.1% of parts) with zero demand in 12 months, the fastest cash-release lever</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Per-part forecast selection</strong> — Croston/SBA chosen by lowest MASE, aligned with Syntetos-Boylan theory. SBA wins 67% of erratic/lumpy parts</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>Cpk = 1.2% capable</strong> — a quantified demonstration that classical SPC is the wrong tool for intermittent demand, routing parts to specialized methods</div></div>
+            <div class="proj-metric"><span class="proj-metric-icon">→</span><div><strong>full technical report</strong> — worked calculations, per-field data transparency, and business recommendations with ROI framing</div></div>
+          </div>
+        </div>
+        <div class="proj-stack">
+          <span class="stk">Python</span><span class="stk">Plotly Dash</span><span class="stk">Pandas</span><span class="stk">NumPy</span><span class="stk">SciPy</span><span class="stk">EOQ</span><span class="stk">Newsvendor</span><span class="stk">Croston/SBA</span><span class="stk">Six Sigma</span><span class="stk">DMAIC</span><span class="stk">Render</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 03 -->
+    <div class="proj-card r">
+      <div class="proj-left">
+        <div class="proj-num">Project 03</div>
         <div class="proj-tag">SaaS · Product Analytics · ML · A/B Testing · Cohort Analysis</div>
         <h3 class="proj-title">Product Operations KPI Intelligence System</h3>
         <p class="proj-desc">
@@ -425,10 +479,10 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
       </div>
     </div>
 
-    <!-- PROJECT 03 -->
+    <!-- PROJECT 04 -->
     <div class="proj-card r">
       <div class="proj-left">
-        <div class="proj-num">Project 03</div>
+        <div class="proj-num">Project 04</div>
         <div class="proj-tag">Technical PM · Program Management · AI Deployment · Launch Readiness</div>
         <h3 class="proj-title">AI Launch Readiness Command Center</h3>
         <p class="proj-desc">
@@ -642,13 +696,17 @@ footer p{font-family:var(--mono);font-size:0.65rem;color:var(--ink3);letter-spac
         <div class="c-icon">↗</div>
         <div><div class="c-label">Live Project 01</div><div class="c-val">Supply Chain Risk Intelligence Platform</div></div>
       </a>
+      <a href="https://inventory-optimization-dashboard.onrender.com/" target="_blank" class="c-link">
+        <div class="c-icon">↗</div>
+        <div><div class="c-label">Live Project 02</div><div class="c-val">Inventory Optimization &amp; Working Capital Intelligence</div></div>
+      </a>
       <a href="https://appuct-ops-kpi-system-xzeyg9ghwb9zwrd4tkowof.streamlit.app/" target="_blank" class="c-link">
         <div class="c-icon">↗</div>
-        <div><div class="c-label">Live Project 02</div><div class="c-val">Product Operations KPI Intelligence System</div></div>
+        <div><div class="c-label">Live Project 03</div><div class="c-val">Product Operations KPI Intelligence System</div></div>
       </a>
       <a href="https://ai-launch-readiness-command-center-mq8vzi5ze62ishalmilriu.streamlit.app/" target="_blank" class="c-link">
         <div class="c-icon">↗</div>
-        <div><div class="c-label">Live Project 03</div><div class="c-val">AI Launch Readiness Command Center</div></div>
+        <div><div class="c-label">Live Project 04</div><div class="c-val">AI Launch Readiness Command Center</div></div>
       </a>
     </div>
   </div>
